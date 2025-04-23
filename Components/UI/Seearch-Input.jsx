@@ -1,19 +1,24 @@
+import { colors } from '@/constant';
+import { AntDesign } from '@expo/vector-icons';
 import {
-  View,
+  StyleSheet,
   Text,
   TextInput,
-  StyleSheet,
   TouchableOpacity,
+  View,
 } from 'react-native';
-import React from 'react';
-import { AntDesign } from '@expo/vector-icons';
 
-const Search = ({ search, onPress }) => {
+export const SearchInput = ({ search, onPress, setValue, value }) => {
   if (search) {
     return (
       <View style={styles.container}>
-        <AntDesign name="search1" size={20} color="lightgray" />
-        <TextInput style={styles.input} placeholder="Search Recipe" />
+        <AntDesign name="search1" size={20} color={colors.lightGrey} />
+        <TextInput
+          style={styles.input}
+          placeholder="Search recipe"
+          value={value}
+          onChangeText={setValue}
+        />
       </View>
     );
   }
@@ -24,26 +29,25 @@ const Search = ({ search, onPress }) => {
       onPress={onPress}
       activeOpacity={0.8}
     >
-      <AntDesign name="search1" size={20} color="lightgray" />
-      <Text style={[styles.input]} placeholder="Search Recipe"></Text>
+      <AntDesign name="search1" size={20} color={colors.lightGrey} />
+      <Text style={[styles.input, { color: colors.grey }]}>Search recipe</Text>
     </TouchableOpacity>
   );
 };
 
-export default Search;
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 10,
     borderWidth: 1,
-    borderColor: 'lightgray',
+    borderColor: colors.lightGrey,
     paddingVertical: 7,
     paddingHorizontal: 10,
     borderRadius: 8,
     marginTop: 10,
   },
-  icon: {},
+
   input: {
     color: 'black',
     flex: 1,
