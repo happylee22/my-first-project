@@ -8,6 +8,8 @@ export default function RootLayout() {
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="home" options={{ headerShown: false }} />
         <Stack.Screen name="search" options={{ headerShown: false }} />
+        <Stack.Screen name="[id]" options={{ headerShown: false }} />
+        <Stack.Screen name="flatlist" options={{ headerShown: false }} />
       </Stack>
     </SafeAreaView>
   );

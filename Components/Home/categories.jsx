@@ -23,6 +23,7 @@ export const Categories = () => {
       try {
         const response = await fetch(url, options);
         const { results } = await response.json();
+
         const limitedResults = results.slice(0, 8);
         setTags(limitedResults);
         setSelectedTag(limitedResults[0].name);
